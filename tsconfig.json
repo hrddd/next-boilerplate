@@ -1,29 +1,29 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es5", // ES5形式にトランスパイルする
     "lib": [
       "dom",
       "dom.iterable",
       "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
+    ], // 最新のESターゲットバージョン + ブラウザ用を指定
+    "allowJs": false, // jsファイルをビルドしない
+    "skipLibCheck": true, // *.d.tsの型チェックをスキップする
+    "strict": true, // 厳密型チェックをon
+    "forceConsistentCasingInFileNames": true, // ファイル名の大文字小文字を区別する
+    "noEmit": true, // コンパイル結果を出力しない（出力はbabelに任せる）
+    "esModuleInterop": true, // CommonJS/ES Module間のimportの記法の差異を吸収する
+    "module": "esnext", // ModuleはES6形式にする
+    "moduleResolution": "node", // Moduleのパス解決をNode形式にする
+    "resolveJsonModule": true, // 型定義せずjsonモジュールを利用する
+    "isolatedModules": true, // exportの無いファイルはエラー
+    "jsx": "preserve" // jsx → createElementの変換は行わない（babelで行う）
   },
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+  ], // コンパイル対象（next-env.d.tsはNext.jsの型を拾うために必要）
   "exclude": [
     "node_modules"
-  ]
+  ] // コンパイル除外対象
 }
